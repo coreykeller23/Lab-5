@@ -1,0 +1,43 @@
+Author:Corey Keller
+File Name:lab5algoAndpsuedo.txt
+Created:2.21.24
+Purpose:Provide design for Lab 5 Python file
+
+Problem Description: Create a program that will split a string into a list and get information from the list to complete certain tasks. The first task is to display if a DnD class has spellcasting, and if so how many spell slots it has. This should be done by looking for the "Yes" keyword in the random selection, and displaying the proper information if it is "Yes". The second task is to calculate the average number of spell slots among the classes that have spellcasting. This will require a loop to search for the "Yes" keyword and adding their spell slots to a total. Then divide that number by the number of classes counted. Both tasks should be printed in a comprehensible way.
+
+Step 1: Start with the creation of the utility file. This file will contain the functions called in the executable file.
+	a. Create constants for the indexes of the string. They should be called CLASS, SPELLCASTING, and SPELLSLOTS with the subsequent index values.
+	b. The first function will take a random selection from the split string and print what their class is, if they have spellcasting, and if so how many spell slots they have.
+		def funcName(argument):
+			for var in argument:
+				if var[1]=="Yes":
+					print(CLASS, SPELLCASTING: SPELLSLOTS)
+				else:
+					print(CLASS: SPELLCASTING)
+	c. The second function will calculate the average spell slots among spellcasters.
+		def funcName2(argument):
+			var1=0
+			var2=0
+			for var3 in argument:
+				if var3[SPELLCASTING]=="Yes":
+					var1=var1+int(var3[SPELLSLOTS])
+					var2=var2+1
+			if var2>0:
+				average=var1/var2
+				print(average)
+			else:
+				print("nothing found")
+Step 2: Begin the exectuable file.
+	a. Import the utility module and the "random" module.
+	b. Create the string variable with info seperated by "," and entries seperated by 	";".
+	c.Create a list variable that will split the string: var=string.split(";")
+	d. Create an empty list: list=[]
+	e. Split the list into sublists to assign each piece of info associated with a 	class into indexes.
+		for var1 in var:
+			splitentries=var1.split(",")
+			list.append(splitentries)
+	f. Create a variable to hold a random selection of entries.
+		randomentries=random.sample(list,#)
+	g. Call each function using the associated variables to complete each task.
+		utilityfile.func1(randomentries)
+		utilityfile.func2(list)
